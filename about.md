@@ -1,4 +1,9 @@
-# About
+---
+layout: page
+title: About
+permalink: /about/
+---
+
 
 ## Education
 B.Tech in Computer Science, GITAM University (2023)
