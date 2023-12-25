@@ -26,8 +26,7 @@ Data Engineer Intern @Amazon
 ## Coding Profiles
 - [Codeforces](https://codeforces.com/profile/raghuramjee): Specialist (Rating - 1479)
 - [Codechef](https://www.codechef.com/users/raghuramjee): 4 Star (Rating - 1898)
-- [Leetcode](https://leetcode.com/raghuramjee/)
-: 400+ Problems Solved
+- [Leetcode](https://leetcode.com/raghuramjee/): 400+ Problems Solved
 
 ## Achivements
 - All India Rank of 5 in TCS CodeVita Season 10, Round 1
