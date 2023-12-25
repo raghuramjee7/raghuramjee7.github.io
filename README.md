@@ -1,2 +1,7 @@
-# raghuramjee7.github.io
-Portfolio
+# Software Developer
+
+### Education
+B.Tech in CSE, GITAM Universiy
+
+### Work Experience
+Data Eningeering Intern @Amazon
