@@ -4,7 +4,6 @@ title: "My First Blog Post"
 categories: junk
 author:
 - Raghuramjee Janapareddy
-- Nelson Mandela Muntz
 meta: "Springfield"
 ---
 
