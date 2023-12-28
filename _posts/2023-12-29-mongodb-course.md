@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A MongoDB Crash Course"
-categories: junk
+categories: misc
 author:
 - Raghuramjee Janapareddy
 meta: "Springfield"
