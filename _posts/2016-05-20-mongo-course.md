@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "This post demonstrates post content styles"
+title: "A MongoDB Crash Course"
 categories: junk
 author:
-- Bart Simpson
-- Nelson Mandela Muntz
+- Raghuramjee Janapareddy
 meta: "Springfield"
 ---
 
