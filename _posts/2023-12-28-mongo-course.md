@@ -9,7 +9,7 @@ meta: "Springfield"
 
 # NoSQL Databases
 
-**Resource** - https://www.youtube.com/watch?v=c2M-rlkkT5o&t=43s&ab_channel=BroCode
+**Resource** - [YouTube Video](https://www.youtube.com/watch?v=c2M-rlkkT5o&t=43s&ab_channel=BroCode)
 
 It allows different types of data to be stored in the same database. It is a non-relational database. It is a database that does not require a fixed schema, avoids joins, and is easy to scale. The type of data that can be stored is
 1. Key-value pairs
