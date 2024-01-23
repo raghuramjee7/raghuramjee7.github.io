@@ -7,8 +7,6 @@ author:
 meta: "Springfield"
 ---
 
-# Aswathama hatha, iti narova kunjarova
-
 The time when Dharmaraja lied.  
 
 During the Kurukshetra, Dronacharya was leading the Kaurava Army, and he is a the sage who can not be defeated, not while he is still holding his weapons. For Dharma to win, Krishna had to come up with a plan to kill Dronacharya.  
