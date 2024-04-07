@@ -216,7 +216,8 @@ greet_dag = hello_world_etl()
 ### Connect with Postgres
 1. Go to Admin -> Connections to create a new connection
 2. We can setup all the values of the connection, if the postgres connection type is not avaialable, we need to install the postgres provider - `pipenv install apache-airflow-providers-postgres` and restart the webserver.
-3. Once the connection is created, we can use that connection_id to interact with the db.
+3. Once the connection is created, we can use that connection_id to interact with the db.  
+
 ```
 from airflow import DAG
 from airflow.providers.postgres.operators.postgres import PostgresOperator
