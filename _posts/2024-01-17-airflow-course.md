@@ -9,6 +9,7 @@ meta: "Springfield"
 
 # An Airflow Crash Course
 
+
 ## Setup
 
 1. Create a git directory for practise and clone it
@@ -28,11 +29,12 @@ meta: "Springfield"
 3. The goal of a task is to achieve something, the method it uses to achieve it is called an operator. eg BashOperator, PythonOperator, Custom Operators etc
 4. A task instance is the execution of a task run at a date
 
-
 ## DAGs
-In airflow, DAGs are defined as python files in the `dags/` folder.
+In airflow, DAGs are defined as python files in the `dags/` folder.  
+1. To run a DAG we use - `airflow dags test <dag_id> <start_date>`
+2. List all the DAGs - `airflow dags list`
 
-### First DAG with BashOperator
+### DAG with BashOperator
 
 ```
 from airflow import DAG
@@ -96,6 +98,17 @@ task_1 = PythonOperator(
 
     task_1
 ```
+
+
+
+### Sensors
+1. Sensors are a type of operator that will keep running until a certain criteria is met
+
+### Executors
+1. Executors are the mechanism by which airflow executes the tasks
+2. The SequentialExecutor is the default execution engine for Airflow. It runs only a single task at a time. This means having multiple workflows scheduled around the same timeframe may cause things to take longer than expected. Not recommended for production use.
+3. The LocalExecutor is a parallel executor that can run tasks in parallel on the same machine. It uses the multiprocessing python library to achieve parallelism.
+4. We can run `airflow info` to get the executor information or it is present in the `airflow.cfg` file
 
 
 ### XComs
@@ -238,3 +251,41 @@ with DAG(
     )
     task >> task2
 ```
+
+### SLAs
+1. SLAs are Service Level Agreements, which are used to define the time by which a task should be completed
+2. If an SLA is defined for a task, and the task is not completed by that time, then the task is marked as failed
+3. If an SLA is missed, an email is sent to the owner of the task and logs are generated
+4. To check go to Browse -> SLA Misses
+5. We can define SLA for a task by using the sla parameter in the task definition
+```
+task1 = BashOperator(
+        task_id = "first_task",
+        bash_command = "echo This is the first task",
+        sla = timedelta(seconds=30),
+    )
+```
+6. We can add the same `sla` parameter to the default_args to set the default SLA for all the tasks in the DAG
+
+### Reporting
+1. Email alerts are sent to the owner for reporting purposes
+. It is by default present in the airflow.
+2. Airflow has built-in options for sending messages on success, failure, or error / retry. These are handled via keys in the default_args dictionary that gets passed on DAG creation.
+3. We can also use the `email_on_failure`, `email_on_retry`, `email` parameters to send emails on failure, retry, or success respectively. We add the list of emails to `email` parameter to send emails to multiple users.
+
+### Templates
+1. Templates are used to pass dynamic values to the tasks
+2. Templates allow substitution of information during a DAG run. In other words, every time a DAG with templated information is executed, information is interpreted and included with the DAG run.
+3. We use jinja templating to pass dynamic values to the tasks  
+4. We use the filename key in params and display params.filename.
+5. We can use advance templating to pass dynamic values to the tasks  
+6. To check if an attribute supports templating, run `help(Operator)` and check the variable called `template_fields`.
+
+### Variables
+1. Airflow gives predefined variables that we can use to store values that we can use across the DAGs. These are in jimja templating format
+2. There is a macros variable which provides a lot of predefined variables that we can use in the DAGs  
+
+### Branching
+1. Branching is a way to run a task based on the result of the previous task
+2. By default, we're using the BranchPythonOperator. This operator takes a python_callable parameter, which is a function that returns the task_id of the next task to run.
+3. The provide_context parameter is set to True, which means that the function will receive a dictionary with information about the task instance and the dag run - the runtime variables and the macros.
