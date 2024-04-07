@@ -7,9 +7,6 @@ author:
 meta: "Springfield"
 ---
 
-# An Airflow Crash Course
-
-
 ## Setup
 
 1. Create a git directory for practise and clone it
