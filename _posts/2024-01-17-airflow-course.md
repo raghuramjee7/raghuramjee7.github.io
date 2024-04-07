@@ -154,7 +154,8 @@ task_1 = PythonOperator(
 
 ### TaskFlow API
 1. We use taskflow api to reduce the number of lines of code that we use.
-2. Sample DAG with TaskFlow API - 
+2. Sample DAG with TaskFlow API -  
+
 ```
 from airflow.decorators import dag, task
 from datetime import datetime, timedelta
